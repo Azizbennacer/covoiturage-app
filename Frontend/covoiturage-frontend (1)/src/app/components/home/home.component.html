@@ -1,0 +1,95 @@
+<div class="app-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div
+      *ngIf="showSuccessMessage"
+      class="notification"
+      [class.success]="isSuccess"
+      [class.error]="!isSuccess"
+      >
+      {{ successMessage }}
+      <button class="close-notification" (click)="showSuccessMessage = false">
+        ×
+      </button>
+    </div>
+    <h1 class="app-name">TuniGo</h1>
+    <div class="welcome-container">
+      <p class="welcome-message">
+        Bienvenue sur notre plateforme de covoiturage
+      </p>
+    </div>
+    <div class="content">
+      <button class="btn-connect" (click)="openPopupConnexion()">
+        Se connecter
+      </button>
+      <button class="btn-signup" (click)="openPopupInscription()">
+        S'inscrire
+      </button>
+    </div>
+  </section>
+
+  <!-- Popup Connexion -->
+  <div *ngIf="showLoginPopup" id="popup-connexion" class="popup-container">
+    <div class="popup">
+      <h2>Connexion</h2>
+      <form (ngSubmit)="submitLogin($event)">
+        <div class="form-group">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Mot de passe:</label>
+          <input type="password" id="login-password" name="motDePasse" required />
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn-submit">Valider</button>
+          <button type="button" class="btn-close" (click)="closeAllPopups()">
+            Fermer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popup Inscription -->
+  <div *ngIf="showSignupPopup" id="popup-inscription" class="popup-container">
+    <div class="popup">
+      <h2>Inscription</h2>
+      <form (ngSubmit)="submitSignup($event)">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="username">Nom d'utilisateur:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Numéro de téléphone:</label>
+          <input type="telephone" id="telephone" name="telephone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="register-password">Mot de passe:</label>
+          <input
+            type="password"
+            id="register-password"
+            name="motDePasse"
+            required
+          />
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn-submit">Valider</button>
+          <button type="button" class="btn-close" (click)="closeAllPopups()">
+            Fermer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

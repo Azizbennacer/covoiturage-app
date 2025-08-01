@@ -1,0 +1,139 @@
+<div class="interface">
+  <!-- RECHERCHE DE TRAJET (Gauche) -->
+  <div class="moitie gauche">
+    <h2 class="titre-formulaire">VOUS CHERCHEZ UN COVOITURAGE</h2>
+    <div class="formulaire">
+      <label for="depart">Départ</label>
+      <input
+        type="text"
+        id="depart"
+        [(ngModel)]="recherche.villeDepart"
+        name="villeDepart"
+        placeholder="Ville de départ"
+      />
+
+      <label for="arrivee">Arrivée</label>
+      <input
+        type="text"
+        id="arrivee"
+        [(ngModel)]="recherche.villeArrivee"
+        name="villeArrivee"
+        placeholder="Ville d'arrivée"
+      />
+
+      <div>
+        <label for="date">Date de départ</label>
+        <input
+          type="datetime-local"
+          id="date"
+          name="date"
+          [(ngModel)]="recherche.date"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="action-formulaire">
+      <button (click)="rechercherTrajets()">Rechercher un trajet</button>
+    </div>
+  </div>
+
+  <!-- CREATION DE TRAJET (Droite) -->
+  <div class="moitie droite">
+    <h2 class="titre-formulaire droite-titre">VOUS PROPOSEZ UN COVOITURAGE</h2>
+    <form class="formulaire" (ngSubmit)="submitTrajet()" #trajetForm="ngForm">
+      <div>
+        <label for="depart">Départ</label>
+        <input
+          type="text"
+          id="depart"
+          name="depart"
+          placeholder="Ville de départ"
+          [(ngModel)]="trajet.villeDepart"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="arrivee">Arrivée</label>
+        <input
+          type="text"
+          id="arrivee"
+          name="destination"
+          placeholder="Ville d'arrivée"
+          [(ngModel)]="trajet.villeArrivee"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="date">Date de départ</label>
+        <input
+          type="datetime-local"
+          id="date"
+          name="date"
+          [(ngModel)]="trajet.dateTrajet"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="nb_places">Nombre de places</label>
+        <input
+          type="number"
+          id="nb_places"
+          name="nombrePlaces"
+          placeholder="Nombre de places"
+          [(ngModel)]="trajet.nbPlaces"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="prix">Prix (TND)</label>
+        <input
+          type="number"
+          id="prix"
+          name="prix"
+          placeholder="Prix"
+          [(ngModel)]="trajet.prix"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="typeVoiture">Type de voiture</label>
+        <input
+          type="text"
+          id="typeVoiture"
+          name="typeVoiture"
+          placeholder="Type de voiture"
+          [(ngModel)]="trajet.typeVoiture"
+        />
+      </div>
+    </form>
+    <div class="action-formulaire">
+      <button (click)="submitTrajet()" type="submit">Créer un trajet</button>
+      <button (click)="afficherTrajetsUtilisateur()">Voir mes trajets</button>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP DE SUCCÈS -->
+<div class="popup-success" *ngIf="showConfirmationPopup">
+  <p>🚗 Trajet créé avec succès !</p>
+  <button (click)="afficherTrajetsUtilisateur()">Voir mes trajets</button>
+  <button (click)="fermerPopup()">Fermer</button>
+</div>
+
+<div *ngIf="showConfirmationPopup" class="popup-confirmation">
+  <div class="popup-content">
+    <p class="popup-message">🚗 Trajet créé avec succès !</p>
+    <div class="popup-actions">
+      <button class="popup-button" (click)="afficherTrajetsUtilisateur()">
+        Voir mes trajets
+      </button>
+      <button class="popup-button" (click)="fermerPopup()">Fermer</button>
+    </div>
+  </div>
+</div>
