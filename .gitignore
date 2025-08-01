@@ -1,0 +1,25 @@
+# Fichiers générés par l'IDE
+.idea/
+.vscode/
+*.iml
+
+# Backend (Java/Spring)
+target/
+.mvn/
+mvnw*
+*.jar
+*.war
+*.ear
+
+# Frontend (Angular)
+node_modules/
+dist/
+.angular/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Environnements
+.env
+*.log
