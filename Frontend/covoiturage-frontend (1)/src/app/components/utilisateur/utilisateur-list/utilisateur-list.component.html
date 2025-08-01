@@ -1,0 +1,11 @@
+<h2>Liste des utilisateurs</h2>
+
+<ul *ngIf="utilisateurs.length > 0; else aucunUtilisateur">
+  <li *ngFor="let user of utilisateurs">
+    👤 {{ user.nom }} - 📧 {{ user.email }}
+  </li>
+</ul>
+
+<ng-template #aucunUtilisateur>
+  <p>Aucun utilisateur trouvé.</p>
+</ng-template>

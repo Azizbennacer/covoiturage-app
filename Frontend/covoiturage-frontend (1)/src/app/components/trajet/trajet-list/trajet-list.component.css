@@ -1,0 +1,373 @@
+/* Import de polices Google modernes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@800&family=Space+Grotesk:wght@500&display=swap');
+
+/* Container avec fond image + dégradé coloré translucide */
+.trajets-container {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+  border-radius: 20px;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Effet de lumière animé */
+.trajets-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotateLight 15s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateLight {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Titre avec effet néon moderne */
+.trajets-container h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  font-size: 2.8rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #0f172a;
+  text-shadow:
+    0 0 8px rgba(20, 184, 166, 0.3),
+    0 4px 12px rgba(6, 182, 212, 0.2);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 2rem;
+  background: linear-gradient(90deg, #06b6d4, #14b8a6, #06b6d4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 3s linear infinite;
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Table avec effet 3D et verre */
+.trajets-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  background-color: transparent;
+  position: relative;
+}
+
+/* En-tête avec effet verre */
+.trajets-table th {
+  background: rgba(20, 184, 166, 0.85);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 1.2rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  box-shadow:
+    0 8px 20px rgba(6, 182, 212, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  user-select: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Cellules avec effet carte 3D */
+.trajets-table td {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.2rem 1.5rem;
+  color: #334155;
+  font-weight: 500;
+  font-size: 1.05rem;
+  box-shadow:
+    0 5px 15px rgba(20, 184, 166, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  vertical-align: middle;
+  border-radius: 8px;
+  border: 1px solid rgba(20, 184, 166, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover avec effet de levitation */
+.trajets-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 12px 25px rgba(20, 184, 166, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+/* Actions avec espacement amélioré */
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* Boutons avec effets modernes */
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(135deg, #06b6d4, #14b8a6);
+  color: white;
+  box-shadow:
+    0 5px 15px rgba(6, 182, 212, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #14b8a6, #06b6d4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+button:hover {
+  box-shadow:
+    0 8px 20px rgba(20, 184, 166, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+/* Bouton supprimer avec effet pulse */
+.delete-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+}
+
+.delete-btn:hover {
+  animation: pulseRed 1.5s infinite;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.6);
+}
+
+@keyframes pulseRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(220, 38, 38, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Message pas de trajets avec animation */
+.no-trajet-message {
+  text-align: center;
+  font-style: italic;
+  color: #64748b;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  animation: fadeIn 1.5s ease-in-out;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Effets de responsive */
+@media (max-width: 768px) {
+  .trajets-container {
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+  }
+
+  .trajets-container h2 {
+    font-size: 2rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.popup {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 420px;
+  animation: scaleIn 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.popup h2 {
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #06b6d4, #14b8a6, #06b6d4);
+  font-weight: 600;  
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #0f172a;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0rem;
+  background: linear-gradient(90deg, #06b6d4, #14b8a6, #06b6d4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 3s linear infinite;
+}
+
+.popup input {
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.popup input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #40e0d0;
+}
+
+.popup .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.popup button {
+  flex: 1;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #32cd99, #40e0d0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(64, 224, 208, 0.4);
+}
+
+.popup button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(64, 224, 208, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

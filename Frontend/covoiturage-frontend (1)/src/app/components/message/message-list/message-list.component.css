@@ -1,0 +1,227 @@
+.messages-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #37C3B2;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.no-messages {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  padding: 30px 0;
+}
+
+.message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.message-item {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.message-item:hover {
+  background-color: #e6f7f5;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.expediteur {
+  font-weight: 600;
+  color: #2a7f7a;
+}
+
+.date-envoi {
+  font-style: italic;
+  color: #999;
+}
+
+.message-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #222;
+  white-space: pre-wrap; 
+}
+
+.message-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.message-item {
+  background-color: #f6f6f6;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.message-header {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.reponse-form textarea {
+  width: 100%;
+  min-height: 80px;
+  margin: 0.5rem 0;
+}
+
+.reponse-form button {
+  margin-right: 0.5rem;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 18, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup {
+  background: #fff;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    0 0 30px rgba(0, 255, 224, 0.3),
+    0 0 60px rgba(138, 43, 226, 0.25);
+  position: relative;
+}
+
+.popup h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--vert-principal), var(--violet));
+  color: transparent;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(90deg, #06b6d4, #14b8a6, #06b6d4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.popup .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.popup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--gris-fonce);
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #06b6d4, #14b8a6, #06b6d4);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #0f172a;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0rem;
+  background: linear-gradient(90deg, #06b6d4, #14b8a6, #06b6d4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 3s linear infinite;
+}
+
+.popup textarea {
+  width: 94%;
+  padding: 1rem;
+  border: 2px solid var(--vert-secondaire);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+  resize: vertical;
+  box-shadow: inset 0 0 5px rgba(0, 255, 224, 0.2);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.btn-submit,
+.btn-close {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit {
+  margin-left: 35rem;
+  flex: 1;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #32cd99, #40e0d0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(64, 224, 208, 0.4);
+}
+
+.btn-submit:hover {
+  box-shadow: 0 8px 24px rgba(0, 255, 224, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-close {
+  background: #ccc;
+  color: #333;
+}
+
+.btn-close:hover {
+  background: #bbb;
+  transform: translateY(-2px);
+}
