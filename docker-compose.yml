@@ -1,24 +1,22 @@
-version: '3.9'
 services:
   backend:
     build: ./backend
     ports:
-      - "8080:8080"
+      - "8081:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:h2:mem:covoiturage  # Ou MySQL si besoin
-    depends_on:
-      - frontend  # Optionnel
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:covoiturage  # Ou MySQL si tu en utilises une
 
   frontend:
-    build: ./frontend
+    build: ./Frontend
     ports:
-      - "80:80"  # Nginx sert Angular sur port 80 pour accès direct
-    depends_on:
-      - backend
+      - "4200:80"   # Change 80 en 4200 (ou 3000, 8081, etc.)
+    # Supprime depends_on: backend → Pas besoin, frontend est statique !
 
-  # Optionnel : DB MySQL
-  # db:
-  #   image: mysql:8.0
-  #   environment:
-  #     MYSQL_DATABASE: covoiturage_db
-  #     MYSQL_ROOT_PASSWORD: root
+# Optionnel : Si tu utilises MySQL séparé
+#  db:
+#    image: mysql:8.0
+#    environment:
+#      MYSQL_DATABASE: covoiturage_db
+#      MYSQL_ROOT_PASSWORD: root
+#    ports:
+#      - "3306:3306"

@@ -10,5 +10,5 @@ RUN npm run build --prod
 
 # -------- RUN --------
 FROM nginx:alpine
-COPY --from=build /app/dist/FRONTEND /usr/share/nginx/html
+COPY --from=build /app/dist/covoiturage-frontend /usr/share/nginx/html
 EXPOSE 80
