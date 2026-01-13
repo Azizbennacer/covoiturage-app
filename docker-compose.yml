@@ -4,8 +4,8 @@ services:
     ports:
       - "8081:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:h2:mem:covoiturage  # Ou MySQL si tu en utilises une
-
+      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/covoiturage  
+      
   frontend:
     build: ./Frontend
     ports:
